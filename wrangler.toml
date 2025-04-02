@@ -2,3 +2,10 @@ name = "gament" # 确保这个名称与你在 Cloudflare 界面设置的一致
 main = "_worker.js" # 或者你重命名后的文件路径，例如 "index.js"
 compatibility_date = "2025-04-02" # 设置一个近期的日期，例如 "2023-10-30"
 #account_id = "de9630c3e0e6f9e697d83df3497720d7" # 你需要填入你的 Account ID
+
+# 推荐方式：在环境块中配置
+[env.production]
+# 使用 zone_id (更精确，推荐)
+zone_id = "aic"
+# 或者使用 zone_name (如果名称唯一且不易变)
+# zone_name = "anglosaxo.dpdns.org"
