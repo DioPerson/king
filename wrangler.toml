@@ -1,4 +1,4 @@
 name = "king" # 确保这个名称与你在 Cloudflare 界面设置的一致
-main = "src/_worker.js" # 或者你重命名后的文件路径，例如 "index.js"
+main = "src/index.js" # 或者你重命名后的文件路径，例如 "index.js"
 compatibility_date = "2025-04-02" # 设置一个近期的日期，例如 "2023-10-30"
 #account_id = "de9630c3e0e6f9e697d83df3497720d7" # 你需要填入你的 Account ID
