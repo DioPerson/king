@@ -5,7 +5,16 @@ compatibility_date = "2025-04-02" # 设置一个近期的日期，例如 "2023-1
 
 # 推荐方式：在环境块中配置
 [env.production]
-# 使用 zone_id (更精确，推荐)
-zone_id = "aic"
-# 或者使用 zone_name (如果名称唯一且不易变)
-# zone_name = "anglosaxo.dpdns.org"
+# --- 指定域名所在的 Zone ID ---
+zone_id = "4d7a662ed9d3a97a90e5a2f13fdd5d2e" # <--- 将这里替换为你复制的 Zone ID
+# --- 定义路由规则 ---
+routes = [
+  # 示例 1: 将子域名 worker.mydomain.com 下的所有请求路由到此 Worker
+  { pattern = "kun.anglosaxo.dpdns.org/*", script = "gament" },
+
+  # 示例 2: 将主域名下 /api/ 路径的所有请求路由到此 Worker
+  { pattern = "anglosaxo.dpdns.org/api/*", script = "gament" },
+
+  # 示例 3: 将另一个子域名 app.mydomain.com 的特定路径路由到此 Worker
+  # { pattern = "app.mydomain.com/worker-stuff/*", script = "epeius" }
+]
